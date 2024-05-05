@@ -4,7 +4,7 @@
   "description": "prueba de trabajo con mongodb y node.js",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "author": "Raymond C.",
   "license": "ISC",
