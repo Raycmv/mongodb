@@ -1,0 +1,29 @@
+<%- include('components/head') %>
+    <%- include('components/barnav') %>
+    <h1>Users</h1>
+    <% if (message.title) { %>
+        <%- include('components/message') %>
+       <script>
+            document.getElementById("messBox").classList.add(document.getElementById("spanbox").textContent);
+        </script>
+    <% } %>
+    <% if (usersArr) { %>
+        <table class="basetable">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th colspan="2"><button id="add"><a href="/users/deleteAll">Delete All</a></button></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% usersArr.forEach(function(user){ %>
+                    <tr><td><%= user.name %></td><td><%= user.email %></td><td class="passw"><%= user.password %></td><td><button id="delete"><a href="/users/delete/<%= user._id %>" >Delete</a></button></td></tr>
+                <% }); %>
+            </tbody>
+        </table>	
+    <% } else {%>
+        <h2>No Hay registros que mostrar</h2>
+    <% } %>
+<%- include('components/footer') %>

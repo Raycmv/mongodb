@@ -1,0 +1,50 @@
+<%- include('components/head') %>
+    <%- include('components/barnav') %>
+    <h1>Movies</h1>
+    <% if (moviesArr.length > 0) { %>
+        <table class="basetable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Directors</th>
+                    <th>Wins</th>
+                    <th>Nominations</th>
+                    <th>Plot</th>
+                    <th>Poster</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% moviesArr.forEach(function(movie){ %>
+                    <tr><td><%= movie.title %></td><td><%= movie.year %></td><td><%= movie.directors %></td><td class="centr"><%= movie.awards.wins %></td><td class="centr"><%= movie.awards.nominations %></td><td><%= movie.plot %></td><td><img src="<%= movie.poster %>" alt="POSTER" ></td></tr>
+                <% }); %>
+            </tbody>
+        </table>
+        <ul id="page">
+            <% if (movies > 10) { %>
+                <% let allpage = Math.floor(movies/10);
+                    let x = 2;
+                    let y = 9
+                    if(current > 8){  x = current - 5 }
+                    if(current + 5 > allpage){  y = allpage - current + 5 }
+                 %>
+                <li><a href="/movies/search/items/1"> 1 </a></li>
+                    <% if (current > 9) { %>
+                        <b> ... </b>
+                    <% } %>
+                    <% for (let i = x; i < x + y ; i++){ %>
+                        <% if( i == current){ %>
+                            <li style="background-color: blue;"><a style="color:white" href="/movies/search/items/<%= i %>"><%= i %></a></li>
+                        <% } %>
+                        <li><a href="/movies/search/items/<%= i %>"> <%= i %> </a></li>
+                    <% } %>
+                    <% if (current <= allpage - 5) { %>
+                        <b> ... </b>
+                    <% } %>
+                <li><a href="/movies/search/items/<%= allpage %>"> <%= allpage %> </a></li>
+            <% } %>
+        </ul>
+    <% } else {%>
+        <h2>No Hay registros que mostrar</h2>
+    <% } %>
+<%- include('components/footer') %>

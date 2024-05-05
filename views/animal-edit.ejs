@@ -1,0 +1,18 @@
+<%- include('components/head') %>
+    <%- include('components/barnav') %>
+    <h1>Editar</h1>
+    <% if (message.title) { %>
+        <%- include('components/message') %>
+       <script>
+            document.getElementById("messBox").classList.add(document.getElementById("spanbox").textContent);
+        </script>
+    <% } %>
+    <form class="form" action="/animals/animal-update" method="POST">
+        <input type="hidden" name="id" value="<%= animal._id %>" >
+        <input type="text" name="name" value="<%= animal.name %>" required>
+        <input type="text" name="type" value="<%= animal.type %>" required>
+        <input type="text" name="color" value="<%= animal.color %>" required>
+        <input type="number" name="size" value="<%= animal.size %>" required>
+        <input type="submit" value="Send">
+    </form>
+<%- include('components/footer') %>

@@ -1,0 +1,21 @@
+<%- include('components/head') %>
+    <%- include('components/barnav') %>
+        <h1>Sign in</h1>
+            <%- include('components/message') %>
+           <script>
+                document.getElementById("messBox").classList.add(document.getElementById("spanbox").textContent);
+            </script>
+        <div id="formtecl">
+            <div id="inptconten">
+                <p>Enter your email</p>
+                <div id="inptemail"></div>
+                <p>Enter your password</p>
+                <div id="inptpassw"></div>
+                <span class="hidden" id="<%= code %>">
+                <button id="submitButton">Send</button>
+            </div>
+            <div id="contecl">
+                <div id="tecl"></div>
+            </div>
+        </div>
+<%- include('components/footer') %>

@@ -1,0 +1,20 @@
+<%- include('components/head') %>
+    <%- include('components/barnav') %>
+        <h1><%= titulo %></h1>
+        <div id="inic">
+           <p>This site is designed as a test of mastery of the knowledge acquired about the work of frontend programming, backend, databases, login and registration, etc...</p>
+           <br>
+           <p>To develop this site I used:</p>
+           <p>html, Css, Javascript, Express, Mongoose, Ejs, D3.js, etc...</p>
+           <br>
+        </div>
+        <% if(!user){ %>
+            <div id="imprtn">
+                <h2>Important</h2>
+                <p>To interact with the databases you must log in with your email or use (email: user01@gmail.com,  password: 12345678).</p>
+           </div>
+        <% } %>
+           
+        
+<%- include('components/footer') %>
+

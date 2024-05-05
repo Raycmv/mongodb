@@ -1,0 +1,42 @@
+<%- include('components/head') %>
+    <%- include('components/barnav') %>
+    <h1>Animals</h1>
+    <% if(user){ %>
+        <div id="imprtn">
+            <h2>Important</h2>
+            <p>For the protection of this database, if more than 20 elements are entered or all records are deleted, the default ones, will be loaded.</p>
+        </div>
+    <% } %>
+    
+    <% if (animalsArr) { %>
+        <table class="basetable">
+            <thead>
+                <tr><th>No.</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Color</th>
+                    <th>Size</th>
+                    <% if (user) { %>
+                        <th colspan="2"><button id="add"><a href="/animals/add-animal">Add</a></button></th>
+                    <% } %>
+                </tr>
+            </thead>
+            <tbody>
+                <% let x = 1 %>
+                <% animalsArr.forEach(function(animal){ %>
+                    <tr><td><%= x++ %></td>
+                        <td><%= animal.name %></td>
+                        <td><%= animal.type %></td>
+                        <td><%= animal.color %></td>
+                        <td><%= animal.size %> cm</td>
+                        <% if (user) { %>
+                            <td><button id="edit"><a href="/animals/edit/<%= animal._id %>" >Edit</a></button></td>
+                            <td><button id="delete"><a href="/animals/delete/<%= animal._id %>" >Delete</a></button></td></tr>
+                        <% } %>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else {%>
+        <h2>There are no records to show</h2>
+    <% } %>
+<%- include('components/footer') %>
