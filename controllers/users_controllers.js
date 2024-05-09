@@ -144,6 +144,7 @@ Usersroute.userouteDeleteAll = async (req, res) => {
             password: 'dEeFfGgHDfEgFhGieFfGgHhIEfGjJlNñOrRtVwXaAcEfGjJlNñOrRtVwXaAc'
         },{ name:'Raycmv', email: 'raymondcmv@gmail.com',
             password: 'hhoSpKrHEFdiiOtPlRifgDIIpTqLsIFGeDFIjKnNoQrSvVxZaBeEgIjKnNoQ'
+            //hhpSqKrHEFdiiPtQlRifgDIIqTrLsIFGeDFIjKnNpRsTwWyAbCfFhJkLoOqS cambio
         }]
         await Users.create(user);
         message.changeObj('Success','Users have been successfully deleted','greenbox');

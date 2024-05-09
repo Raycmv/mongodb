@@ -1,6 +1,6 @@
 
 function encript(message){
-	const alphabet = 'aAbBcCdDeEfFgGhHiIjJkKlLmMnNñÑoOpPqQrRsStTuUvVwWxXyYzZ';
+	const alphabet = 'aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ';
     const number = '0123456789';
     let encrypted_text = '';
     let extr = 1;
