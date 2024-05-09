@@ -17,6 +17,7 @@ Moviesroute.movieroute =  async (req, res) => {
             console.log(err);
         }
     }
+
     if(page == 0 || page > Math.floor(movies.length/10)){
       res.render('404'); 
     } else {
