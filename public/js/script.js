@@ -88,7 +88,7 @@ function main(){
     }
 
     if(location.pathname == '/grafic'){
-       fetch('http://localhost:4000/grafic/json')
+       fetch(`${location.href}/json`)
             .then(response => response.json())
             .then(data => {
                 ChartBar(data);
